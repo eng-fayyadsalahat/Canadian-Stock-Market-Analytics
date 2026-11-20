@@ -1,0 +1,15 @@
+crontab -e
+
+SHELL=/bin/bash
+
+30 1 * * 1-5 cd /path/to/project && /home/fayyad/.venvs/dev/bin/python run_pipeline.py >> outputs/logs/cron.log 2>&1
+
+crontab -l
+
+cd /path/to/project
+
+/home/fayyad/.venvs/dev/bin/python run_pipeline.py
+
+tail -f outputs/logs/cron.log
+
+
